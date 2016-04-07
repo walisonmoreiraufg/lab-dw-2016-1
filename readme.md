@@ -1,10 +1,10 @@
 
-# Laboratório de DW 2016/1
+# LaboratÃ³rio de DW 2016/1
 
-## Vídeos
+## VÃ­deos
 
-* [Clonar e importar projeto Maven.](https://rawgit.com/gustavosotnas/ufg-inf-dw-2016-1/master/src/site/clonar-e-importar-projeto-maven/clonar-e-importar-projeto-maven.html)
-* [Configurar servidor de aplicação.](https://rawgit.com/gustavosotnas/ufg-inf-dw-2016-1/master/src/site/configurar-servidor-de-aplicacao/configurar-servidor-de-aplicacao.html)
+* [Clonar e importar projeto Maven.](https://rawgit.com/walisonmoreira/ufg-inf-dw-2016-1/master/src/site/clonar-e-importar-projeto-maven/clonar-e-importar-projeto-maven.html)
+* [Configurar servidor de aplicaÃ§Ã£o.](https://rawgit.com/walisonmoreira/ufg-inf-dw-2016-1/master/src/site/configurar-servidor-de-aplicacao/configurar-servidor-de-aplicacao.html)
 
 ## Links
 
