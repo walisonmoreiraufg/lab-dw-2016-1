@@ -1,1 +1,0 @@
-Descompacte todo o conteúdo numa pasta e abra o arquivo HTML.
