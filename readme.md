@@ -3,8 +3,8 @@
 
 ## Vídeos
 
-* [Clonar e importar projeto Maven.](https://github.com/walisonmoreira/ufg-inf-dw-2016-1/raw/master/src/site/clonar-e-importar-projeto-maven.zip)
-* [Configurar servidor de aplicação.](https://github.com/walisonmoreira/ufg-inf-dw-2016-1/raw/master/src/site/configurar-servidor-de-aplicacao.zip)
+* [Clonar e importar projeto Maven.](https://rawgit.com/gustavosotnas/ufg-inf-dw-2016-1/master/src/site/clonar-e-importar-projeto-maven/clonar-e-importar-projeto-maven.html)
+* [Configurar servidor de aplicação.](https://rawgit.com/gustavosotnas/ufg-inf-dw-2016-1/master/src/site/configurar-servidor-de-aplicacao/configurar-servidor-de-aplicacao.html)
 
 ## Links
 
