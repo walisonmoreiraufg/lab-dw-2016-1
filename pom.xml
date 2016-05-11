@@ -15,7 +15,7 @@
   </properties>
 
   <build>
-    <finalName>dw</finalName>
+    <finalName>ufg-inf-dw-2016-1</finalName>
     <plugins>
       <plugin>
         <groupId>org.apache.tomcat.maven</groupId>
