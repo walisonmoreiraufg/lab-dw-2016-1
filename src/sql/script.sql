@@ -1,5 +1,5 @@
 -- URL JDBC para acessar o banco de dados.
---jdbc:derby:C:\\banco-de-teste;create=true
+--jdbc:derby:db;create=true
 
 create table usuario (
   codigo int,
