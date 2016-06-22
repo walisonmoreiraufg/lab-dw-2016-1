@@ -3,7 +3,9 @@ package bancodados;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  * DAO = Data Access Object.
@@ -58,5 +60,34 @@ public class UsuarioDao {
 		pstmt.close();
 		// Fechar conexão.
 		conn.close();
+	}
+
+	public static ArrayList<Usuario> listar() throws SQLException {
+		// Abrir uma conexão com o banco de dados.
+		Connection conn = DriverManager.getConnection(URL);
+		// Executar instrução SQL.
+		String sql = "select codigo, nome, login, senha from usuario";
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		//Executa a consulta. 
+		ResultSet rs = pstmt.executeQuery();
+		// Percorrer resultados.
+		ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
+		while (rs.next()) {
+			int codigo = rs.getInt("codigo");
+			String nome = rs.getString("nome");
+			String login = rs.getString("login");
+			String senha = rs.getString("senha");
+
+			Usuario usuario = new Usuario(codigo, nome, login, senha);
+			usuarios.add(usuario);
+		}
+		// Fechar resultado.
+		rs.close();
+		// Fechar sentença.
+		pstmt.close();
+		// Fechar conexão.
+		conn.close();
+		
+		return usuarios;
 	}
 }

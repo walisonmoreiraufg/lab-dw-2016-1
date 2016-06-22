@@ -46,6 +46,8 @@ public class UsuarioController extends HttpServlet {
 				throw new IllegalArgumentException("Operação \"" + op + "\" não suportada.");
 			}
 			req.setAttribute("msg", msg);
+			req.setAttribute("usuarios", UsuarioDao.listar());
+			
 			req.getRequestDispatcher("UsuarioView.jsp").forward(req, resp);
 		} catch (Exception e) {
 			e.printStackTrace(resp.getWriter());

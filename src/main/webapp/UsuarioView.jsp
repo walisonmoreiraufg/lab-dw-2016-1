@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<%@page import="java.util.ArrayList"%>
+<%@page import="bancodados.Usuario"%>
 <html>
 
   <head>
@@ -31,6 +33,28 @@
       <button name="operacao" value="alterar">Alterar</button>
     </form>
     <b>${msg}</b>
+    <hr>
+    <table border="1">
+      <tr>
+        <th>Código</th>
+        <th>Nome</th>
+        <th>Login</th>
+        <th>Ações</th>
+      </tr>
+      
+      <%
+      ArrayList<Usuario> usuarios =
+        (ArrayList<Usuario>) request.getAttribute("usuarios");
+      for (Usuario usuario : usuarios) {
+      %>
+      <tr>
+        <td><%=usuario.getCodigo()%></td>
+        <td><%=usuario.getNome()%></td>
+        <td><%=usuario.getLogin()%></td>
+        <td><a href="usuario?operacao=excluir&codigo=<%=usuario.getCodigo()%>">Excluir</a></td>
+      </tr>
+      <%}%>
+    </table>
   </body>
 
 </html>
