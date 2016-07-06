@@ -25,6 +25,11 @@ public class ContaDao {
 	public static ArrayList<Conta> listar() throws SQLException {
 		// Abrir uma conexão com o banco de dados.
 		Connection conn = DriverManager.getConnection(URL);
+		
+		//Lê informações de transações não efetivadas.
+		conn.setTransactionIsolation(
+		    Connection.TRANSACTION_READ_UNCOMMITTED);
+		
 		// Executar instrução SQL.
 		String sql = "select numero, saldo from conta";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -52,6 +57,8 @@ public class ContaDao {
   public static void transferir(int numContaOrigem, int numContaDestino, double valor) throws SQLException {
     // Abrir uma conexão com o banco de dados.
     Connection conn = DriverManager.getConnection(URL);
+    //Inicio da transação.
+    conn.setAutoCommit(false);
     try {
       //Subtrair o valor do saldo da conta origem.
       debitar(conn, numContaOrigem, valor);
@@ -59,8 +66,15 @@ public class ContaDao {
       registrarDebito(numContaOrigem, valor);
       //Adicionar o valor no saldo da conta destivo.
       creditar(conn, numContaDestino, valor);
+
+      //Efetivando mudanças no banco.
+      conn.commit();
       
     } catch(Throwable e) {
+      
+      //Desfaz as mudanças.
+      conn.rollback();
+
       throw new RuntimeException(e);
     } finally {
       // Fechar conexão.
