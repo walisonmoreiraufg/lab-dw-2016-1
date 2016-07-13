@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+  xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+  version="2.1">
+
+  <persistence-unit name="gestao-academica">
+    <!-- Instruindo ao JPA que será usado Hibernate. -->
+    <provider>org.hibernate.ejb.HibernatePersistence</provider>
+    <class>jpa.Curso</class>
+    <properties>
+      <!-- Driver JDBC do Derby. -->
+      <property name="hibernate.connection.driver_class"
+        value="org.apache.derby.jdbc.EmbeddedDriver"/>
+      <property name="hibernate.connection.url"
+        value="jdbc:derby:db;create=true"/>
+      <!-- Dialeto Hibernate para o Derby. -->
+      <property name="hibernate.dialect"
+        value="org.hibernate.dialect.DerbyDialect" />
+      <!-- Gera o banco de dados. -->
+      <property name="hibernate.hbm2ddl.auto" value="update" />
+      <property name="hibernate.show_sql" value="true" />
+      <property name="hibernate.format_sql" value="true" />
+    </properties>
+  </persistence-unit>
+
+</persistence>
